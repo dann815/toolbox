@@ -1,0 +1,37 @@
+{% extends 'outer_template.html' %}
+
+{% block title %}
+ToolBox
+{% endblock %}
+
+{% block body %}
+	<div class="row">
+		<div class="col-xs-12">
+			<h3>Tools:</h3>
+			<ul>
+				<li><a href="{{ url_for('listusers') }}">Users - List</a></li>
+				<li><a href="#">Users - Provision Accouts</a></li>
+				<li><a href="#">Users - Inactivate Accounts</a></li>
+				<li><a href="#">Users - Deprovision Accounts</a></li>
+				<li><a href="#">Users - Consolidate Accounts</a></li>
+				<li><a href="#">Groups - List</a></li>
+				<li><a href="#">Groups - Add Users</a></li>
+				<li><a href="#">Files - Apply Metadata</a></li>
+				<li><a href="#">Folders - List External Collabs</a></li>
+				<li><a href="#">Demo - Populate Demo Account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-12">
+			  <h3>Box Credentials</h3>
+			  <form action="" method="post" name="login">
+			  Client ID: <input type="text" name="clientID" class="credentialtext" value="{{ credentials.clientID }}"> <br />
+			  Client Secret: <input type="text" name="clientSecret" class="credentialtext" value="{{ credentials.clientSecret }}"> <br />
+			  Access Token: <input type="text" name="accessToken" class="credentialtext" value="{{ credentials.accessToken }}"><br />
+			  Refresh Token: <input type="text" name="refreshToken" class="credentialtext" value="{{ credentials.refreshToken }}"> <br />
+			    <p><input type="submit" value="Set/Update"></p>
+			  </form>
+		</div>
+	</div>
+{% endblock %}
